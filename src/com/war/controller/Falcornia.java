@@ -3,7 +3,6 @@ package com.war.controller;
 import com.war.model.Battalion;
 import com.war.util.InputException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 

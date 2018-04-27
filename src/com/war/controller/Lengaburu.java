@@ -49,12 +49,15 @@ public class Lengaburu {
   }
 
   /**
-   * Create a battalion of given index which will be added to the given deployed armies and return
-   * the extra enemy power after computing the defense power.
+   * Create a battalion of given index which will be added to the given deployed
+   * armies and return the extra enemy power after computing the defense power.
    *
-   * @param deployedArmies The list represent the deployed armies.
-   * @param enemyPower the power of enemy.
-   * @param index represent the index of battalion inside totalArmies list.
+   * @param deployedArmies
+   *          The list represent the deployed armies.
+   * @param enemyPower
+   *          the power of enemy.
+   * @param index
+   *          represent the index of battalion inside totalArmies list.
    * @return the enemy power after deduction the defense power.
    */
   private int computeBattalion(ArrayList<Battalion> deployedArmies, int enemyPower, int index) {
@@ -69,8 +72,8 @@ public class Lengaburu {
       enemyPower -= currentBattalionPower;
     } else {
       // Add required number of battalion.
-      int deployedCount =
-          (int) Math.ceil((double) enemyPower / currentBattalion.getArmy().getPower());
+      int deployedCount = (int) Math
+          .ceil((double) enemyPower / currentBattalion.getArmy().getPower());
       Battalion deployedBattalion = currentBattalion.copy();
       deployedBattalion.setCount(deployedCount);
       addBatalionToFightingArmies(deployedArmies, deployedBattalion);
@@ -81,14 +84,16 @@ public class Lengaburu {
   }
 
   /**
-   * Add the given battalion to fighting list. It will add the battalion to the given list if not
-   * present. if present, just increase the count.
+   * Add the given battalion to fighting list. It will add the battalion to the
+   * given list if not present. if present, just increase the count.
    *
-   * @param deployedArmies the fighting list.
-   * @param deployedBattalion the battalian to add
+   * @param deployedArmies
+   *          the fighting list.
+   * @param deployedBattalion
+   *          the battalian to add
    */
-  private void addBatalionToFightingArmies(
-      ArrayList<Battalion> deployedArmies, Battalion deployedBattalion) {
+  private void addBatalionToFightingArmies(ArrayList<Battalion> deployedArmies,
+      Battalion deployedBattalion) {
     if (deployedArmies.contains(deployedBattalion)) {
       int existingIndex = deployedArmies.indexOf(deployedBattalion);
       int existingCount = deployedArmies.get(existingIndex).getCount();

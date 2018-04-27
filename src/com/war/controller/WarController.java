@@ -19,27 +19,25 @@ public class WarController {
   /** Initialized both kingdom's armies with available counts. */
   private void initArmies() {
     ArrayList<Battalion> falCorniaArmies = new ArrayList<>();
-    falCorniaArmies.add(
-        new Battalion(new Army(Constants.HORSE, Constants.POWER_FALCORNIA_HORSE), 300));
-    falCorniaArmies.add(
-        new Battalion(new Army(Constants.ELEPHANT, Constants.POWER_FALCORNIA_ELEPHANT), 200));
-    falCorniaArmies.add(
-        new Battalion(
-            new Army(Constants.ARMOURED_TANK, Constants.POWER_FALCORNIA_ARMOURED_TANK), 40));
-    falCorniaArmies.add(
-        new Battalion(new Army(Constants.SLING_GUN, Constants.POWER_FALCORNIA_SLING_GUN), 20));
+    falCorniaArmies
+        .add(new Battalion(new Army(Constants.HORSE, Constants.POWER_FALCORNIA_HORSE), 300));
+    falCorniaArmies
+        .add(new Battalion(new Army(Constants.ELEPHANT, Constants.POWER_FALCORNIA_ELEPHANT), 200));
+    falCorniaArmies.add(new Battalion(
+        new Army(Constants.ARMOURED_TANK, Constants.POWER_FALCORNIA_ARMOURED_TANK), 40));
+    falCorniaArmies
+        .add(new Battalion(new Army(Constants.SLING_GUN, Constants.POWER_FALCORNIA_SLING_GUN), 20));
     falcornia = new Falcornia(falCorniaArmies);
 
     ArrayList<Battalion> lengaburuArmies = new ArrayList<>();
-    lengaburuArmies.add(
-        new Battalion(new Army(Constants.HORSE, Constants.POWER_LENGABURU_HORSE), 100));
-    lengaburuArmies.add(
-        new Battalion(new Army(Constants.ELEPHANT, Constants.POWER_LENGABURU_ELEPHANT), 50));
-    lengaburuArmies.add(
-        new Battalion(
-            new Army(Constants.ARMOURED_TANK, Constants.POWER_LENGABURU_ARMOURED_TANK), 10));
-    lengaburuArmies.add(
-        new Battalion(new Army(Constants.SLING_GUN, Constants.POWER_LENGABURU_SLING_GUN), 5));
+    lengaburuArmies
+        .add(new Battalion(new Army(Constants.HORSE, Constants.POWER_LENGABURU_HORSE), 100));
+    lengaburuArmies
+        .add(new Battalion(new Army(Constants.ELEPHANT, Constants.POWER_LENGABURU_ELEPHANT), 50));
+    lengaburuArmies.add(new Battalion(
+        new Army(Constants.ARMOURED_TANK, Constants.POWER_LENGABURU_ARMOURED_TANK), 10));
+    lengaburuArmies
+        .add(new Battalion(new Army(Constants.SLING_GUN, Constants.POWER_LENGABURU_SLING_GUN), 5));
     lengaburu = new Lengaburu(lengaburuArmies);
   }
 
@@ -60,11 +58,13 @@ public class WarController {
   /**
    * Prints the war summaries for the given armies.
    *
-   * @param attackingArmies the attacking armies list.
-   * @param defensingArmies the defensing armies list.
+   * @param attackingArmies
+   *          the attacking armies list.
+   * @param defensingArmies
+   *          the defensing armies list.
    */
-  private void printWarSummary(
-      ArrayList<Battalion> attackingArmies, ArrayList<Battalion> defensingArmies) {
+  private void printWarSummary(ArrayList<Battalion> attackingArmies,
+      ArrayList<Battalion> defensingArmies) {
     StringBuilder warSummary = new StringBuilder("");
     warSummary.append("Falcornia attack with ");
     appendArmySummany(warSummary, attackingArmies);
@@ -80,7 +80,10 @@ public class WarController {
     System.out.println(warSummary.toString());
   }
 
-  /** A util method to construct the summary of each battalion for displaying result. */
+  /**
+   * A util method to construct the summary of each battalion for displaying
+   * result.
+   */
   private void appendArmySummany(StringBuilder warSummary, ArrayList<Battalion> battalions) {
     for (Battalion battalion : battalions) {
       warSummary.append(battalion.getCount() + " " + battalion.getArmy().getType() + ", ");
